@@ -9,7 +9,7 @@
     background: url('/static/img/background.jpg') no-repeat center center/cover;
     height:100vh;
 }
-.container h1{
+.container3 h1{
     text-align:center;
     flex:center;
 }
@@ -133,7 +133,7 @@
 .renting{
    background-color: rgb(234, 218, 219);
     }
-.container {
+.container3 {
    height:40%;
     position: relative;
   }

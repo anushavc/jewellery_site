@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import *
 # Create your views here.
 
 def main(request):
@@ -16,5 +16,6 @@ def checkout(request):
     return render(request,'rent/checkout.html',context)
 
 def renting(request):
-    context={}
+    products=jewellery.objects.all()
+    context={'products':products}
     return render(request,'rent/renting.html',context)
