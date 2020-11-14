@@ -1,6 +1,6 @@
 {% extends 'rent/main.html'%}
 {% load static %}
-
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 {% block content %}
 <h3>Cart</h3>
    <div class="container">
@@ -14,8 +14,8 @@
 				<br>
 				<table class="table">
 					<tr>
-						<th><h5>Items: <strong>3</strong></h5></th>
-						<th><h5>Total:<strong> $42</strong></h5></th>
+						<th><h5>Items: <strong>{{order.get_cart_items}}</strong></h5></th>
+						<th><h5>Total:<strong>{{order.get_cart_total}}</strong></h5></th>
 						<th>
 							<a  style="float:right; margin:5px;" class="btn btn-success" href="checkout.html">Checkout</a>
 						</th>
@@ -33,22 +33,24 @@
 					<div style="flex:1"><strong>Quantity</strong></div>
 					<div style="flex:1"><strong>Total</strong></div>
 				</div>
+
 				
+				{% for item in items %}
 				<div class="cart-row">
-					<div style="flex:2"><img class="row-image" src="{% static 'images/placeholder.png' %}"></div>
-					<div style="flex:2"><p>Product 1</p></div>
-					<div style="flex:1"><p>$20</p></div>
+					<div style="flex:2"><img class="row-image" src="{{item.product.imageURL}}" width="200" height="150"></div>
+					<div style="flex:2"><p>{{item.product.name}}</p></div>
+					<div style="flex:1"><p>{{item.product.retail_price}}</p></div>
 					<div style="flex:1">
-						<p class="quantity">2</p>
+						<p class="quantity">{{item.quantity}}</p>
 						<div class="quantity">
-							<img class="chg-quantity" src="{% static  'images/arrow-up.png' %}">
+							<img data-product="{{item.product.id}}" data-action="add" class="chg-quantity update-cart" src="{% static 'img/3+arrow-up.png' %}" width="20" height="20">
 					
-							<img class="chg-quantity" src="{% static  'images/arrow-down.png' %}">
+							<img  data-product="{{item.product.id}}"  data-action="remove" class="chg-quantity update-cart" src="{% static 'img/2+arrow-down.png' %}" width="20" height="20">
 						</div>
 					</div>
-					<div style="flex:1"><p>$32</p></div>
+					<div style="flex:1"><p>{{item.get_total}}</p></div>
 				</div>
-
+				{% endfor %}
 			</div>
 		</div>
 	</div>

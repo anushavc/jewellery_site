@@ -5,5 +5,7 @@ from django.contrib import admin
 from .models import *
 
 admin.site.register(jewellery)
-admin.site.register(group)
 admin.site.register(users)
+admin.site.register(order)
+admin.site.register(OrderItem)
+admin.site.register(shippingaddress)
