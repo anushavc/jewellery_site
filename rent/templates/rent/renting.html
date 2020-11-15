@@ -1,20 +1,9 @@
 {% extends 'rent/main.html'%}
 {% load static %}
 {% block content %}
-<h3 style="text-align: center;">Rent</h3>
-<div class="container col-lg-3">
-  <form action="/">
-    <input type="checkbox" id="necklace" name="necklace" value="necklace">
-    <label for="vehicle1">Necklace</label><br>
-    <input type="checkbox" id="Earring" name="Earring" value="Earring">
-    <label for="Earring">Earring</label><br>
-    <input type="checkbox" id="Ring" name="Ring" value="Ring">
-    <label for="Ring">Ring</label><br>
-    <input type="checkbox" id="bracelet" name="bracelet" value="bracelet">
-    <label for="bracelet">bracelet</label><br>
-  </form>
-</div>
-<div class="container col-lg-9">
+<h3 class="headings" style="text-align: center;">Currently available products</h3>
+
+<div class="container col-lg-12">
     <div class="row ">
       {% for product in products %}
         <div class="col-md-4" >
@@ -22,10 +11,9 @@
               <div class="card h-100 flex-column justify-content-center" style="width:100px;background-color: pink;margin:10px;" >
                 <img class="card-img-top" src="{{product.imageURL}}" alt="Card image cap">
                 <div class="card-body">
-                <h5 class="card-title">{{product.name}}</h5>
-                <p class="card-text">Description:{{product.description}}</p>
-                <p class="card-text">Price:{{product.retail_price}}</p>
-                <button data-product="{{product.groupid}}" data-action="add" class="btn add-btn update-cart">Add to Cart</button>
+                <h5 class="card-title" style="text-align:center;font-size:15px"><b>{{product.name}}</b></h5>
+                <p class="card-text" style="font-size:15px"><b>Description: </b>{{product.description}}</p>
+                <p class="card-text" style="font-size:15px"><b>Price:</b>{{product.retail_price}}</p>
              
               </div>
               </div>

@@ -114,7 +114,7 @@
     margin: 0;
     font-family: 'Tangerine', cursive;
     font-size:35px;
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -253,7 +253,12 @@ footer {
    height:40px;
     text-align: center;
     padding: 3px;
-    background-color: rgb(153,102,102,0.5);
+    background-color: rgb(153,102,102);
     color:black;
   }
         
+.headings{
+  padding:10px;
+  font-family: 'Tangerine', cursive;
+  font-size: 40px;
+}

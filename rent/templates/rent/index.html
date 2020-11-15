@@ -2,8 +2,16 @@
 {% load static %}
 
 {% block content %}
-    <div class="container1">
-        <div class="centertext">
+<div class="container1">
+  <div style="margin: 0;
+  font-family: 'Tangerine', cursive;
+  font-size:35px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align:center
+">
         <h1 >Welcome to <span class="miusha">Miusha</span></h1>
         <p>This is your one stop platform to rent and buy premiuim jewellery.</p>
     </div>
@@ -109,13 +117,12 @@
 
         </div>
       </div>
-      <a href="rent" class="myButton" style="text-align:center;position: relative;margin-top:80px;
+      <a href="{% url 'rent' %}" class="myButton" style="text-align:center;position: relative;margin-top:80px;
       top: 90%;
       left: 40%;">Explore More</a>
         
 </section>
-<footer>
-    <p style="padding:10px;">&copy;Copyright 2020
+<footer style="background-color: rgb(153,102,102,0.3);">
         <br>
   </footer>
 {% endblock content %}

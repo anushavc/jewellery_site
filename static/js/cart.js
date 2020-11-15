@@ -8,35 +8,3 @@ for(var i=0;i< updateBtns.length;i++){
     })
 
 }
-console.log('user',user)
-if(user=='AnonymousUser')
-{
-    console.log('user not authenticated')
-}
-else
-{
-    updateUserOrder(productid,action)
-}
-
-
-function updateUserOrder(productid,action)
-{
-    console.log('user is logged in,sending data..')
-
-    var url='/update_item/'
-    fetch(url,{
-        method:'POST',
-        headers:{
-            'Content-Type':'application/json',
-            'X-CSRFToken':csrftoken
-        },
-        body:JSON.stringfy({'productid':productid,'action':action})
-    })
-    .then((response)=>{
-        return response.json()
-    })
-    .then((data)=>{
-    console.log('data:',data)
-    location.reload()
-})
-}
